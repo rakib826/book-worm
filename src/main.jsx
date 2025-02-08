@@ -9,6 +9,7 @@ import {
 import Root from './components/Root/Root.jsx';
 import Error from './components/Error/Error.jsx';
 import Home from './components/Home/Home.jsx';
+import Dashboard from './components/Dashboard/Dashboard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>
       }
     ]
   },
