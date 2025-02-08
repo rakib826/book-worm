@@ -1,9 +1,18 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const links = (
+    <>
+      <li> <NavLink to="/">Home</NavLink> </li>
+      <li> <NavLink to="/listed-books">Listed Books</NavLink> </li>
+      <li> <NavLink to="/pages-to-read">Pages to Read</NavLink> </li>
+    </>
+  );
+
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-200">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,34 +35,19 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>Listed Books</a>
-              </li>
-              <li>
-                <a>Pages to Read</a>
-              </li>
+              {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Book Worm </a>
+          <a className="btn btn-ghost text-xl font-bold">Book Worm </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Listed Books</a>
-            </li>
-            <li>
-              <a>Pages to Read</a>
-            </li>
+            {links}
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn border-2 border-green-500">Log in</a>
+          <a className="btn ml-4 bg-green-500">Sign up</a>
         </div>
       </div>
     </div>
