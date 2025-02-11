@@ -6,11 +6,11 @@ const Book = ({ book }) => {
 
   return (
     <Link to={`/books/${bookId}`}>
-      <div className="w-80 h-[420px]">
-        <div className="card bg-base-100 shadow-xl h-full flex flex-col p-4">
+      <div className="w-80 h-[420px] transition-transform duration-300 hover:scale-105">
+        <div className="card bg-base-100 shadow-xl h-full flex flex-col p-4 hover:shadow-2xl transition-shadow duration-300">
           <figure className="bg-slate-50 rounded-lg w-full h-[240px] flex items-center justify-center overflow-hidden">
             <img
-              className="w-28  object-cover rounded"
+              className="w-28 object-cover rounded transition-transform duration-300 hover:scale-110"
               src={image}
               alt={bookName}
             />
