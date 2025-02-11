@@ -6,36 +6,32 @@ const Book = ({ book }) => {
 
   return (
     <Link to={`/books/${bookId}`}>
-      <div>
-        <div className="card bg-base-100 w-96 shadow-xl h-full flex flex-col p-4">
-          <figure className="bg-slate-50 rounded-lg">
+      <div className="w-80 h-[420px]">
+        <div className="card bg-base-100 shadow-xl h-full flex flex-col p-4">
+          <figure className="bg-slate-50 rounded-lg w-full h-[240px] flex items-center justify-center overflow-hidden">
             <img
-              className="h-[240px] object-cover rounded mt-4 mb-4"
+              className="w-28  object-cover rounded"
               src={image}
               alt={bookName}
             />
           </figure>
           <div className="card-body flex flex-col flex-grow justify-start">
             <div>
-              {tags.map((tag,index) => (
-                <button key={index} className="py-1 px-2 bg-lime-100 mr-2 rounded-md italic text-sm">
+              {tags.map((tag, index) => (
+                <button
+                  key={index}
+                  className="py-1 px-2 bg-lime-100 mr-2 rounded-md italic text-sm"
+                >
                   {tag}
                 </button>
               ))}
             </div>
-            <h2 className="card-title font-bold">
-              {bookName}
-              {/* <div className="badge badge-secondary">NEW</div> */}
-            </h2>
-            <p className="flex-grow italic">By {author}</p>
+            <h2 className="card-title font-bold text-lg">{bookName}</h2>
+            <p className="italic text-sm">By {author}</p>
             <div className="border-b-2 my-1"></div>
-            <div className="flex flex-row justify-end items-center">
-              <p> {category} </p>
-              <p className="text-right"> {rating} </p>
-            </div>
-            <div className="card-actions justify-end mt-auto">
-              <div className="badge badge-outline">Fashion</div>
-              <div className="badge badge-outline">Products</div>
+            <div className="flex flex-row justify-between items-center text-sm">
+              <p className="text-gray-600">{category}</p>
+              <p className="text-right text-gray-700 font-semibold">{rating}</p>
             </div>
           </div>
         </div>

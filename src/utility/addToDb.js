@@ -14,6 +14,7 @@ const addToStoredReadList = (id) => {
     console.log(id,"Alreday exist in the read list")
   }else{
     storedList.push(id)
-    const new
+    const newStoredListStr = JSON.stringify(storedList);
+    localStorage.setItem('read-list', newStoredListStr)
   }
 }
